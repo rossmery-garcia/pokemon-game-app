@@ -1,4 +1,5 @@
 <template>
+  <img class="fade-in" src="./assets/logo.png" alt="Vue logo">
 </template>
 
 <script>
