@@ -1,11 +1,13 @@
 <template>
-  <img class="fade-in" src="./assets/logo.png" alt="Vue logo">
+  <PokemonPage />
 </template>
 
 <script>
+import PokemonPage from './pages/PokemonPage.vue'
 export default {
   name: 'App',
   components: {
+    PokemonPage
   }
 }
 </script>
