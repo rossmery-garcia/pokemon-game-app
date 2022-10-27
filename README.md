@@ -19,3 +19,6 @@ yarn build
 ```
 yarn test:unit
 ```
+
+## The Pokémon API
+[Pokémon API](https://pokeapi.co/)
