@@ -62,4 +62,29 @@ describe('PokemonPage component', () => {
     expect( pokemonPictureComponent.attributes('pokemonid') ).toBe('1');
     expect( pokemonOptionsComponent.attributes('pokemons') ).toBeTruthy();
   });
+
+  test('checkAnswer method', async () => {
+
+    const wrapper = shallowMount( PokemonPage, {
+      data() {
+        return {
+          pokemonArr: mockPokemons,
+          pokemon: mockPokemons[0],
+          showPokemon: false,
+          showAnswer: false,
+          message: '',
+        }
+      }
+    });
+
+    await wrapper.vm.checkAnswer(1);
+
+    expect( wrapper.find('h2').exists() ).toBeTruthy();
+    expect( wrapper.vm.showPokemon ).toBe(true);
+    expect( wrapper.find('h2').text() ).toBe(`Correcto, ${ mockPokemons[0].name }`);
+
+    await wrapper.vm.checkAnswer(10);
+
+    expect( wrapper.vm.message ).toBe(`Oops, era ${ mockPokemons[0].name }`);
+  });
 })
