@@ -11,7 +11,7 @@
 
     <PokemonOptions
       :pokemons="pokemonArr"
-      @selection="checkAnswer"
+      @selectionPokemon="checkAnswer"
     />
 
     <template v-if="showAnswer" >
